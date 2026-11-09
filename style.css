@@ -1,0 +1,90 @@
+/* «Є / Нема» — кольори й шрифти бренду (.claude/skills/brand/references/visual.md) */
+@font-face { font-family: "Fixel Display"; font-weight: 900; font-display: swap; src: url("fonts/FixelDisplay-Black.ttf") format("truetype"); }
+@font-face { font-family: "Fixel Display"; font-weight: 800; font-display: swap; src: url("fonts/FixelDisplay-ExtraBold.ttf") format("truetype"); }
+
+:root {
+  --yellow: #FFD43B;
+  --ink: #14161F;
+  --night: #161A33;
+  --paper: #FAF8F2;
+  --muted: #55586A;
+  --muted-on-yellow: #3D3510;
+  --muted-on-dark: #C9CBD6;
+  --line: #E4E0D4;
+
+  --bg: var(--paper);
+  --text: var(--ink);
+  --text-muted: var(--muted);
+  --card-bg: var(--ink);
+  --card-text: #FFFFFF;
+  --card-label: var(--yellow);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--night);
+    --text: #FFFFFF;
+    --text-muted: var(--muted-on-dark);
+    --line: rgba(255,255,255,.14);
+    --card-bg: var(--yellow);
+    --card-text: var(--ink);
+    --card-label: var(--ink);
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+.wrap, main { max-width: 760px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+
+/* Шапка: жовта, як стан «Є» */
+.top { background: var(--yellow); color: var(--ink); }
+.top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding-top: 16px; padding-bottom: 16px; }
+.logo { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+.logo img { border-radius: 10px; box-shadow: 0 0 0 1.5px var(--ink); }
+.logo b { display: block; font: 900 24px/1.1 "Fixel Display", sans-serif; }
+.logo small { display: block; font-size: 14px; color: var(--muted-on-yellow); }
+.top nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.top nav a {
+  color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600;
+  padding: 8px 14px; min-height: 44px; display: inline-flex; align-items: center;
+  border: 1.5px solid var(--ink); border-radius: 999px;
+}
+.top nav a[aria-current="page"] { background: var(--ink); color: var(--yellow); }
+
+main { padding-top: 40px; padding-bottom: 64px; }
+main > header { margin-bottom: 28px; }
+h1, h2 { font-family: "Fixel Display", -apple-system, sans-serif; font-weight: 800; letter-spacing: -.01em; }
+h1 { font-size: 40px; line-height: 1.1; margin: 0 0 12px; }
+h2 { font-size: 26px; line-height: 1.2; margin: 44px 0 10px; }
+h3 { font-size: 18px; font-weight: 700; margin: 28px 0 6px; }
+p, ul { margin: 10px 0; }
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: currentColor; }
+.meta { color: var(--text-muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+
+/* «Коротко»: темна картка, як на екрані «Є» */
+.note {
+  background: var(--card-bg); color: var(--card-text);
+  border-radius: 24px; padding: 20px 22px; margin: 24px 0;
+}
+.note strong { color: var(--card-label); }
+
+.hero p { font-size: 20px; color: var(--text-muted); }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.table-wrap { overflow-x: auto; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 56px 0; }
+
+/* Підвал: нічний, як стан «Нема» */
+.site { background: var(--night); color: #FFFFFF; }
+@media (prefers-color-scheme: dark) { .site { background: #0F1124; } }
+.site .wrap { padding-top: 28px; padding-bottom: 36px; font-size: 15px; }
+.site p { margin: 6px 0; color: var(--muted-on-dark); }
+.site a { color: #FFFFFF; }
