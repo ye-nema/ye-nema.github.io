@@ -88,3 +88,38 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 56px 0; }
 .site .wrap { padding-top: 28px; padding-bottom: 36px; font-size: 15px; }
 .site p { margin: 6px 0; color: var(--muted-on-dark); }
 .site a { color: #FFFFFF; }
+
+/* Телефон: компактна шапка — меню текстом в один рядок, без мото */
+@media (max-width: 720px) {
+  .top .wrap { padding-top: 10px; padding-bottom: 4px; gap: 0 16px; }
+  .logo small { display: none; }
+  .logo img { width: 36px; height: 36px; border-radius: 9px; }
+  .logo b { font-size: 22px; }
+  .top nav { gap: 0 18px; width: 100%; }
+  .top nav a { border: 0; padding: 0; min-height: 44px; border-radius: 0; font-size: 16px; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  .top nav a[aria-current="page"] { background: none; color: var(--ink); text-decoration-color: var(--ink); }
+}
+
+/* Одна ширина на всіх сторінках: шапка, підвал і вміст вирівняні по одному краю */
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+body:not(.landing) main { max-width: 1160px; }
+body:not(.landing) main > * { max-width: 760px; }
+body:not(.landing) main > section, body:not(.landing) main > hr { max-width: 760px; }
+
+/* Заголовок сторінки — жовта смуга, як перший екран головної */
+.page-hero { background: var(--yellow); color: var(--ink); padding: 24px 0 40px; }
+.page-hero h1 { font: 900 clamp(36px, 5vw, 60px)/1.05 "Fixel Display", -apple-system, sans-serif; letter-spacing: -.02em; margin: 0 0 12px; }
+.page-hero .meta { color: var(--muted-on-yellow); font-size: 17px; max-width: 760px; margin: 0; }
+.page-hero .meta a { color: var(--ink); text-decoration-color: var(--ink); }
+.page-hero .note { max-width: 760px; margin: 20px 0 0; }
+@media (prefers-color-scheme: dark) { .page-hero .note { background: var(--ink); color: #FFFFFF; } .page-hero .note strong { color: var(--yellow); } }
+
+/* Підтримка й політика: менший відступ між жовтою смугою і першим блоком */
+body:not(.landing) main { padding-top: 28px; }
+body:not(.landing) main > :first-child { margin-top: 0; }
+@media (max-width: 720px) { body:not(.landing) main { padding-top: 20px; } .page-hero { padding-bottom: 28px; } }
+
+/* Підтримка й політика: текстова колонка 760 px по центру сторінки (варіант Б) */
+body:not(.landing) main { max-width: 808px; }
+body:not(.landing) main > * { max-width: none; }
+.page-hero .wrap > * { max-width: 760px; margin-left: auto; margin-right: auto; }
