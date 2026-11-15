@@ -4,27 +4,175 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Є / Нема — Вечори на хуторі без світла</title>
+  <meta name="description" content="Застосунок для iPhone: чи є зараз світло у вашій черзі відключень на Полтавщині, коли вимкнуть і коли дадуть.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ye-nema.github.io/">
+  <meta property="og:title" content="Є / Нема — чи є світло у вашій черзі">
+  <meta property="og:description" content="Видно за дві секунди. Уся Полтавщина, черги 1.1–6.2. Віджети, таймер і сповіщення до вимкнення.">
+  <meta property="og:image" content="https://ye-nema.github.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Є / Нема: жовте «Є» і темне «Нема»">
+  <meta property="og:locale" content="uk_UA">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="icon.svg">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="landing.css?v=9">
 </head>
-<body>
+<body class="landing">
 <header class="top">
   <div class="wrap">
     <a class="logo" href="./"><img src="icon.svg" alt="" width="44" height="44"><span><b>Є / Нема</b><small>Вечори на хуторі без світла</small></span></a>
     <nav><a href="./" aria-current="page">Головна</a><a href="support/">Підтримка</a><a href="privacy/">Конфіденційність</a></nav>
   </div>
 </header>
-<main>
-  <header class="hero">
-    <h1>Є світло чи нема?</h1>
-    <p>Застосунок для iPhone, який показує, чи є зараз світло у вашій черзі відключень у Полтавській області і коли його дадуть або вимкнуть. Віджети, таймер на екрані блокування і сповіщення до вимкнення.</p>
-  </header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-main">
+      <h1>Є світло чи нема?<br>Видно за дві секунди.</h1>
+      <p class="lead">Застосунок для iPhone. Уся Полтавщина (поки що): чи є зараз світло у вашій черзі, коли вимкнуть і коли дадуть.</p>
+      <!-- Коли застосунок вийде: замінити рядок нижче на
+           <a class="store-badge" href="https://apps.apple.com/ua/app/idXXXXXXXXXX"><img src="app-store-badge.svg" alt="Завантажити в App Store" width="177" height="60"></a> -->
+      <p class="soon"><span>скоро</span> в App Store</p>
+      <ul class="perks" aria-label="Умови">
+        <li>Безкоштовно.</li>
+        <li>Без реклами.</li>
+        <li>Без реєстрації.</li>
+      </ul>
+    </div>
+    <!-- Скриншоти з симулятора, збірка main. -->
+    <div class="phones" aria-hidden="true">
+      <div class="phone phone-back"><img src="shots/home-off.jpg?v=2" alt=""></div>
+      <div class="phone phone-front"><img src="shots/home-on.jpg?v=4" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<main class="wide">
+  <section class="block tones">
+    <h2 class="tones-title">Сповіщення з характером</h2>
+    <div class="tones-text">
+      <p>Нагадаємо вчасно — коли:</p>
+      <ul class="push-pills">
+        <li>за 30 хв до вимкнення</li>
+        <li>за 5 хв</li>
+        <li>дали світло</li>
+        <li>перед сном — о котрій дадуть</li>
+        <li>змінили графік</li>
+        <li>є графік на завтра</li>
+        <li>почалися й скасували аварійні</li>
+      </ul>
+      <div class="tone-pick">
+      <div class="seg" aria-label="Тон сповіщень">
+        <button type="button" aria-pressed="true" data-tone="poltava">Полтавський</button>
+        <button type="button" aria-pressed="false" data-tone="serious">Серйозний</button>
+      </div>
+      <p class="seg-hint">Полтавський — з гумором, серйозний — лише факти.</p>
+      </div>
+    </div>
+    <div class="tones-demo">
+      <div class="pushes" data-tone="poltava" aria-live="polite">
+      <div class="push"><img src="icon.svg" alt=""><div><b><span class="p">Через пів години вирубають</span><span class="s">Відключення через 30 хв</span></b><p><span class="p">Павербанк на зарядку, аерогриль на повну, пилосос по колу. Шо стоїш?</span><span class="s">Черга 3.2, з 13:30 до 17:30.</span></p></div><time>13:00</time></div>
+      <div class="push"><img src="icon.svg" alt=""><div><b><span class="p">П'ять хвилин</span><span class="s">Відключення через 5 хв</span></b><p><span class="p">Хто не встиг — той при свічках.</span><span class="s">Черга 3.2.</span></p></div><time>13:25</time></div>
+      <div class="push"><img src="icon.svg" alt=""><div><b><span class="p">Дали!</span><span class="s">Світло мають увімкнути</span></b><p><span class="p">Мені нравицця, як воно світить. Пралка, пилосос, міксер — по черзі, бо автомат виб'є.</span><span class="s">Черга 3.2.</span></p></div><time>17:30</time></div>
+    </div>
+    </div>
+  </section>
+
+  <section class="block day">
+    <h2>Увесь день одним поглядом</h2>
+    <p>Увесь день — смугою з 24 годин. Жовте — світло є, темне — нема. Пралку тепер можна планувати.</p>
+    <div class="bar-card">
+      <div class="bar-head"><b>Сьогодні</b><span class="chip"><i class="dot dot-y"></i>Є 16 год</span><span class="chip"><i class="dot dot-n"></i>Нема 8 год</span></div>
+      <div class="bar" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="n"></i><i></i><i></i><i class="now"></i><i class="hn"></i><i class="n"></i><i class="n"></i><i class="n"></i><i class="nh"></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="axis" aria-hidden="true"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+    </div>
+  </section>
+
+  <section class="block emerg">
+    <div class="emerg-text">
+      <h2>Коли в області аварійні чи екстрені</h2>
+      <p>Такі відключення не прив'язані до графіка: світло можуть вимкнути в будь-якій черзі. Тоді застосунок не вдає, що все знає, і ставить знак питання.</p>
+      <dl class="emerg-list">
+        <dt>Є?</dt><dd>За графіком світло є, але можуть вимкнути.</dd>
+        <dt>Нема?</dt><dd>За графіком світла нема, але можуть і дати.</dd>
+      </dl>
+      <p>Коли аварійні чи екстрені скасують, надішлемо сповіщення. Тримаємось.</p>
+    </div>
+    <div class="emerg-phones" aria-hidden="true">
+      <figure><div class="phone"><img src="shots/emergency-on.jpg?v=3" alt=""></div><figcaption>Аварійні</figcaption></figure>
+      <figure><div class="phone"><img src="shots/extreme-off.jpg?v=2" alt=""></div><figcaption>Екстрені</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Що ще вміє</h2>
+    <div class="features">
+      <article>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>
+        <h3>Таймер до зміни</h3>
+        <p>Скільки лишилось до вимкнення чи увімкнення за графіком, до хвилини.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+        <h3>Віджети</h3>
+        <p>Видно без розблокування: віджети на головному екрані й на екрані блокування.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></svg>
+        <h3>Без інтернету теж</h3>
+        <p>Останній графік зберігається на телефоні, тож його видно навіть без мережі.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <h3>Чесно про дані</h3>
+        <p>Графіки перевіряємо кожні 5 хвилин. Якщо свіжих даних немає, застосунок так і скаже, а не вигадуватиме час.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Як дізнатися свою чергу</h2>
+    <div class="find">
+      <article class="find-card find-main">
+        <h3><span class="num">1</span>Знайдіть номер на сайті обленерго</h3>
+        <ol class="path" aria-label="Що обрати в пошуку">
+          <li>Філія</li><li>Населений пункт</li><li>Вулиця</li><li>Будинок</li>
+        </ol>
+        <p>Для Полтави філія — «Полтавська об'єднана філія». У відповіді шукайте слова <span class="nw">«черга 3-2»</span> — це <span class="nw">черга 3.2</span>.</p>
+        <a class="btn btn-ink btn-ext" href="https://www.poe.pl.ua/disconnection/poshuk-vidkliuchennia-za-osobovym-rakhunkom/">Пошук за адресою<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+        <p class="aside">Не хочеться шукати? Спитайте в сусідки — вона точно знає.</p>
+      </article>
+      <article class="find-card find-app">
+        <h3><span class="num">2</span>Оберіть чергу в застосунку</h3>
+        <div class="qgrid" aria-hidden="true"><span>1.1</span><span>1.2</span><span>2.1</span><span>2.2</span><span>3.1</span><span class="on">3.2</span><span>4.1</span><span>4.2</span><span>5.1</span><span>5.2</span><span>6.1</span><span>6.2</span></div>
+        <p>Змінити чергу можна будь-коли — двома дотиками.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block note-block">
+    <p><b>Неофіційний застосунок.</b> Графіки беремо з публічних даних АТ «Полтаваобленерго». Вони можуть змінюватися без попередження, тож у важливих випадках звіряйтеся з офіційним сайтом.</p>
+  </section>
 </main>
+
 <footer class="site">
   <div class="wrap">
-    <p>Неофіційний застосунок. Графіки — з публічних даних АТ «Полтаваобленерго».</p>
     <p><a href="mailto:yenema.support@gmail.com">yenema.support@gmail.com</a> · <a href="privacy/">Конфіденційність</a> · <a href="support/">Підтримка</a></p>
   </div>
 </footer>
+
+<script>
+  var buttons = document.querySelectorAll('.seg button');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      document.querySelector('.pushes').dataset.tone = b.dataset.tone;
+    });
+  });
+</script>
 </body>
 </html>
